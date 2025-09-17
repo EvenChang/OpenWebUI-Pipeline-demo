@@ -15,6 +15,7 @@ If the MCP Server responds with an error message about missing arguments, the er
 
 After the user provides the missing arguments, the pipeline combines the previous and current context, sends it to the LLM, and then uses the corrected response to call the Semgrep MCP Server.
 
+[!image](openwebui-pipeline-flowchart.png)
 
 ## Feature
 1. Supports multi-turn conversations to fill in missing arguments
