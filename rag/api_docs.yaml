@@ -1,0 +1,33 @@
+api_docs:
+  - content: "列出所有資料庫"
+    api: "/list_databases"
+
+  - content: "列出所有資料表"
+    api: "/list_tables"
+
+  - content: "描述某個資料表的 schema"
+    api: "/describe_table"
+
+  - content: "查詢資料表資料"
+    api: "/query_table"
+
+  - content: "刪除某個資料庫"
+    api: "/delete_database"
+
+  - content: "查詢漏洞總結，包括各 severity 的統計"
+    api: "/query_vulnerability_summary"
+
+  - content: "查詢高風險漏洞文件前 N 名"
+    api: "/query_high_severity_files"
+
+  - content: "查詢 CWE 漏洞統計"
+    api: "/query_cwe_summary"
+
+  - content: "解釋特定 check_id 的漏洞"
+    api: "/explain_vulnerability_by_check_id"
+
+  - content: "查詢特定 CWE 的漏洞文件及次數"
+    api: "/query_vulnerabilities_by_cwe"
+
+  - content: "建議修復措施"
+    api: "/suggest_fix"
