@@ -1,7 +1,7 @@
 # OpenWebUI Pipeline: RAG and MCP Tool Integration
 This repository demonstrates how to use the OpenWebUI Pipeline to retrieve user answers through RAG.
 
-After a RAG similarity search, the pipeline may return a similarity API call such as:
+When a user submits a query in OpenWebUI, the pipeline triggers a RAG similarity search and returns a similarity API call, for example:
 ```
 {
   "api": "/describe_table",
@@ -29,14 +29,13 @@ This Semgrep MCP Server uses **Apache Iceberg** to structure Semgrep scan data a
 There are two Python files:
 
 1. **semgrep-to-iceberg.py**: Reads the `semgrep-json-report.json` file, structures the data, and stores it in MinIO using Apache Iceberg.  
-2. **semgrep-mcp.py**: Provides MCP tools to query relevant information from the structured Semgrep data.  
+2. **semgrep-mcp.py**: Provides MCP tools to query relevant semgrep information from the structured semgrep data.  
 
 ## Requirements
 
 1. Python >= 3.11
 
 ## Download and Installation
-
 
 Please edit the `semgrep-to-iceberg.py`, `semgrep-mcp.py` to replace the minio ip address (s3.endpoint) with your own.
 
@@ -97,10 +96,13 @@ Make sure to copy the `faiss_index` directory into the pipeline process folder b
 ```sudo kubectl cp faiss_index open-webui-pipelines-9749797b8-pv6jp:/app/pipelines```
 
 
-
-
 # Pipeline
 
 `llm-pipeline.py` is the OpenWebUI pipeline file. You can upload it through the OpenWebUI website.
 
 ** Note: Make sure to edit this file to replace the MCP server IP address with your own. **
+
+
+# Future work
+1. Intergrate the vectorstore `faiss_index` directory to OpenwebUI Pipeline without using `kubectl cp`
+2. Dynamic Vector Store Update by OpenWebUI
